@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 const TodoDetail = () => {
   const { todoId } = useParams();
@@ -12,8 +12,10 @@ const TodoDetail = () => {
   return (
     <div>
       <h2>todo detail</h2>
+      <p>{todo.id}</p>
       <p>{todo.title}</p>
       <p>{todo.content}</p>
+      <Link to='/todos/'>이전으로</Link>
     </div>
   );
 };
