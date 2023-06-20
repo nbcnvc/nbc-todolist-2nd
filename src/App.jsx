@@ -1,11 +1,13 @@
-import Header from './components/Header';
-import TodoForm from './components/TodoForm';
+import Header from "./components/Header";
+import TodoForm from "./components/TodoForm";
+import TodoList from "./components/TodoList";
 
 function App() {
   return (
     <>
-      <Header /> 
+      <Header />
       <TodoForm />
+      <TodoList />
     </>
   );
 }
