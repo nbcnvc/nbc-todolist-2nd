@@ -32,6 +32,10 @@ const TodoForm = () => {
       content: todoState.content
     };
     dispatch(todosAction.addTodo(newTodo));
+    setTodoState({
+      title: '',
+      content: '',
+    })
   };
 
   return (
