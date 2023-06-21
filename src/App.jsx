@@ -8,7 +8,7 @@ import TodoList from "./components/TodoList";
 
 export const router = createBrowserRouter([
   {
-    path: "/todos",
+    path: "/",
     element: <App />,
   },
   {
