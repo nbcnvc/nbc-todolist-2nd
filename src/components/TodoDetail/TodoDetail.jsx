@@ -1,5 +1,15 @@
 import { useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { styled } from "styled-components";
+
+import TodoCard from "../ui/TodoCard";
+
+const Container = styled.div`
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+`
 
 const TodoDetail = () => {
   const { todoId } = useParams();
@@ -10,13 +20,9 @@ const TodoDetail = () => {
   });
 
   return (
-    <div>
-      <h2>todo detail</h2>
-      <p>{todo.id}</p>
-      <p>{todo.title}</p>
-      <p>{todo.content}</p>
-      <Link to='/todos/'>이전으로</Link>
-    </div>
+    <Container>
+      <TodoCard todo={todo} />
+    </Container>
   );
 };
 
