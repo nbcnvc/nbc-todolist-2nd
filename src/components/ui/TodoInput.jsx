@@ -1,7 +1,12 @@
 import { styled } from "styled-components";
 
+const Label = styled.label`
+  margin-right: 5px;
+`
+
 const Input = styled.input`
   border-radius: 5px;
+  margin-right: 10px;
 `;
 
 const TodoInput = (props) => {
@@ -9,7 +14,7 @@ const TodoInput = (props) => {
 
   return (
     <>
-      <label htmlFor={idStr}>{labelStr}</label>
+      <Label htmlFor={idStr}>{labelStr}</Label>
       <Input id={idStr} onChange={changeHandler} value={inputValue} />
     </>
   );

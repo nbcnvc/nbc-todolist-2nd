@@ -1,8 +1,18 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { styled } from "styled-components";
 
 import { todosAction } from "../../store/todos";
 import TodoInput from "../ui/TodoInput";
+
+const Form = styled.form`
+  height: 80px;
+  border: 1px solid grey;
+  padding: 0 10px;
+
+  display: flex;
+  align-items: center;
+`
 
 const TodoForm = () => {
   const [todoState, setTodoState] = useState({
@@ -49,7 +59,7 @@ const TodoForm = () => {
 
   return (
     <div>
-      <form onSubmit={submitHandler}>
+      <Form onSubmit={submitHandler}>
         <TodoInput
           idStr="title"
           labelStr="제목"
@@ -63,7 +73,7 @@ const TodoForm = () => {
           inputValue={todoState.content}
         />
         <button>제출</button>
-      </form>
+      </Form>
     </div>
   );
 };
