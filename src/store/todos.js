@@ -21,6 +21,14 @@ const todoSlice = createSlice({
       const id = action.payload.id;
       state.todos = state.todos.filter((todo) => todo.id !== id);
     },
+    updateTodo: (state, action) => {
+      const id = action.payload.id;
+      const todo = state.todos.find((todo) => todo.id === id);
+      if (todo) {
+        todo.title = action.payload.title;
+        todo.content = action.payload.content;
+      }
+    },
     toggleStatus: (state, action) => {
       const id = action.payload.id;
       const todo = state.todos.find((todo) => todo.id === id);
@@ -31,7 +39,6 @@ const todoSlice = createSlice({
   },
 });
 
-
 const store = configureStore({
   reducer: {
     todos: todoSlice.reducer,
@@ -40,4 +47,3 @@ const store = configureStore({
 
 export default store;
 export const todosAction = todoSlice.actions;
-
