@@ -24,7 +24,7 @@ const TodoCard = (props) => {
     <Container>
       <HeadContainer>
         <span>ID: {id}</span>
-        <CustomLink to="/todos/">이전으로</CustomLink>
+        <CustomLink to="/">이전으로</CustomLink>
       </HeadContainer>
       <h2>{title}</h2>
       <p>{content}</p>
